@@ -652,7 +652,7 @@ void muon_pog::Plotter::fill(const std::vector<muon_pog::Muon> & muons,
   for (auto & muon : muons)
     {
       if (muon_pog::hasGoodId(muon,m_tnpConfig.tag_ID) && 
-	  muon_pog::muonTk(muon,m_tnpConfig.muon_trackType).Pt() > 
+	  muon_pog::muonTk(muon,m_tnpConfig.muon_trackType).Pt() > m_tnpConfig.tag_minPt &&
 	  muon_pog::hasFilterMatch(muon,hlt,
 				   m_tnpConfig.tag_hltFilter,
 				   m_tnpConfig.tag_hltDrCut) &&
